@@ -1,6 +1,5 @@
-var game = {};
-game.state1 = function(){};
-game.state1.prototype = {
+game.state2 = function(){};
+game.state2.prototype = {
   preload: function() {},
   create: function() {},
   update: function() {}
