@@ -1,5 +1,5 @@
-game.state9 = function(){};
-game.state9.prototype = {
+demo.state9 = function(){};
+demo.state9.prototype = {
   preload: function() {},
   create: function() {},
   update: function() {}
