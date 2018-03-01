@@ -1,7 +1,10 @@
 demo.state7 = function(){};
 demo.state7.prototype = {
   preload: function() {},
-  create: function() {},
+  create: function() {
+
+    addChangeStateEventListeners();
+  },
   update: function() {}
 
 };
