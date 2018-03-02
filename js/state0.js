@@ -1,17 +1,36 @@
-var demo = {};
-
+var demo = {}, centerX = 1500 / 2; centerY = 1000 / 2; 'funny'; speed = 4;
 demo.state0 = function(){};
 demo.state0.prototype = {
-  preload: function() {},
+
+  preload: function() {
+    game.load.image('funny', 'assets/sprites/funny.png')
+  },
+
   create: function() {
     game.stage.backgroundColor = "#4488AA";
     console.log('state0');
-
     addChangeStateEventListeners();
     //game.scale.scaleMode = PhaserManager.SHOW_ALL;
 
+    funny = game.add.sprite(centerX, centerY, 'funny');
+    funny.anchor.setTo(0.5, 0.5);
+
   },
-  update: function() {},
+  update: function() {
+    if(game.input.keyboard.isDown(Phaser.Keyboard.RIGHT)){
+      funny.x += speed;
+    }
+    else if(game.input.keyboard.isDown(Phaser.Keyboard.LEFT)){
+      funny.x -= speed;
+    }
+    if(game.input.keyboard.isDown(Phaser.Keyboard.UP)){
+      funny.y -= speed;
+    }
+    else if(game.input.keyboard.isDown(Phaser.Keyboard.DOWN)){
+      funny.y += speed;
+    }
+
+  },
 };
 
   function changeState(i, stateNum) {
