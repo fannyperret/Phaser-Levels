@@ -23,7 +23,8 @@ demo.state0.prototype = {
     funny.anchor.setTo(0.5, 0.5);
     funny.scale.setTo(0.4, 0.4);
     game.physics.enable(funny);
-    funny.body.collideWorldBounds = true;
+    funny.body.collideWorldBounds = true
+    //funny.animations.add('walk', [0, 1, 2, 3, 4]);
 
     game.camera.follow(funny);
     game.camera.deadzone = new Phaser.Rectangle(centerX - 100, 0, 300, 500);
@@ -33,11 +34,12 @@ demo.state0.prototype = {
     if(game.input.keyboard.isDown(Phaser.Keyboard.RIGHT)){
       funny.scale.setTo(0.4, 0.4);
       funny.x += speed;
+      //funny.animations.play('walk', 14, true);
     }
     else if(game.input.keyboard.isDown(Phaser.Keyboard.LEFT)){
       funny.scale.setTo(-0.4, 0.4);
-
       funny.x -= speed;
+      //funny.animations.play('walk', 14, true);
     }
     if(game.input.keyboard.isDown(Phaser.Keyboard.UP)){
       funny.y -= speed;
