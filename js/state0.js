@@ -12,7 +12,6 @@ demo.state0.prototype = {
   create: function() {
     game.physics.startSystem(Phaser.Physics.ARCADE);
     game.stage.backgroundColor = "#4488AA";
-    console.log('state0');
     addChangeStateEventListeners();
     //game.word.setBounds(0, 0, 3000, 750); doesn't work
     //game.scale.scaleMode = PhaserManager.SHOW_ALL; doesn't work
@@ -41,10 +40,15 @@ demo.state0.prototype = {
       funny.x -= speed;
       //funny.animations.play('walk', 14, true);
     }
+    /** else{
+    funny.animations.stop('walk');
+    funny.frame = 0;
+  }
+  */
     if(game.input.keyboard.isDown(Phaser.Keyboard.UP)){
       funny.y -= speed;
-      if(funny.y < 625){
-        funny.y = 625;
+      if(funny.y < 600){
+        funny.y = 600;
       }
     }
     else if(game.input.keyboard.isDown(Phaser.Keyboard.DOWN)){
@@ -55,6 +59,7 @@ demo.state0.prototype = {
 };
 
   function changeState(i, stateNum) {
+    console.log('state' + stateNum);
     game.state.start('state' + stateNum);
   }
 
