@@ -1,8 +1,9 @@
-var demo = {}, centerX = 1500 / 2; centerY = 1000 / 2; 'funny'; speed = 4;
+var demo = {}, centerX = 1000 / 7; centerY = 750 / 1.2; 'funny'; speed = 6;
 demo.state0 = function(){};
 demo.state0.prototype = {
 
   preload: function() {
+    game.load.image('BG', 'assets/backgrounds/BG.png')
     game.load.image('funny', 'assets/sprites/funny.png')
   },
 
@@ -10,17 +11,27 @@ demo.state0.prototype = {
     game.stage.backgroundColor = "#4488AA";
     console.log('state0');
     addChangeStateEventListeners();
+    //game.word.setBounds(0, 0, 1000, 750);
     //game.scale.scaleMode = PhaserManager.SHOW_ALL;
 
-    funny = game.add.sprite(centerX, centerY, 'funny');
+    var BG = game.add.sprite(0, 0, 'BG'); // background
+
+    funny = game.add.sprite(centerX, centerY, 'funny'); // sprite
     funny.anchor.setTo(0.5, 0.5);
+    funny.scale.setTo(0.4, 0.4);
+
+    game.camera.follow(funny);
+    game.camera.deadzone = new Phaser.Rectangle(centerX - 300);
 
   },
   update: function() {
     if(game.input.keyboard.isDown(Phaser.Keyboard.RIGHT)){
+      funny.scale.setTo(0.4, 0.4);
       funny.x += speed;
     }
     else if(game.input.keyboard.isDown(Phaser.Keyboard.LEFT)){
+      funny.scale.setTo(-0.4, 0.4);
+
       funny.x -= speed;
     }
     if(game.input.keyboard.isDown(Phaser.Keyboard.UP)){
