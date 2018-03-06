@@ -1,4 +1,4 @@
-# Phaser Architecture
+# Phaser 2 Skeleton
 
 ### Why We need a Good Phaser Architecture?
 
