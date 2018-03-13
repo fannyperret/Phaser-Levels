@@ -12,6 +12,6 @@ The player can walk, jump, kill some enemies and die. I wanted to use all the im
 
 If you want to participate to my purpose, please, feel free to comment my work ;)
 
-Regards,
+Bests Regards,
 
 Funny
