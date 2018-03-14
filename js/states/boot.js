@@ -6,5 +6,5 @@ var bootState = {
 
     // Calling the loadState
     game.state.start('load');
-  }
-}
+  },
+};

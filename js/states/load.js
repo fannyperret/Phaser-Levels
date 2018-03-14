@@ -7,10 +7,10 @@ var loadState = {
     // Loading all assets
     game.load.image('funny', 'assets/sprites/player/funny.png');
     game.load.image('win', 'assets/sprites/enemies/win.png');
-  ,
+  },
 
   create: function() {
     // Call the menuState
     game.state.start('menu');
-  }
-}
+  },
+};
